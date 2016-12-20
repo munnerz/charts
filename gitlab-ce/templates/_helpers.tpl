@@ -21,5 +21,5 @@ Create a default fully qualified redis name.
 We truncate at 24 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
 {{- define "redis.fullname" -}}
-{{- printf "%s-%s" .Release.Name "redis" | trunc 24 -}}
+{{- printf "%s-%s" .Release.Name "redis" | trunc 24 | trimSuffix "-" -}}
 {{- end -}}
