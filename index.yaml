@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   default-backend:
   - apiVersion: v1
-    created: 2016-12-20T16:03:08.554631343Z
+    created: 2016-12-20T16:24:51.311107335Z
     description: A Helm chart for Kubernetes
     digest: 22e3bbf21c82b6df6ce76dc0e334b52c924ac68a7e84d738d32b327d0cc56d44
     name: default-backend
@@ -11,11 +11,20 @@ entries:
     version: 0.1.0
   gitlab-ce:
   - apiVersion: v1
-    created: 2016-12-20T16:03:08.555182336Z
+    created: 2016-12-20T16:24:51.311638669Z
     description: A Helm chart for Kubernetes
     digest: c3338afa225b6c862cd57ec3200e9f90e2e19f54d888d720a723ec68df75a20f
     name: gitlab-ce
     urls:
     - gitlab-ce-0.0.1.tgz
     version: 0.0.1
-generated: 2016-12-20T16:03:08.554251085Z
+  nginx-ingress:
+  - apiVersion: v1
+    created: 2016-12-20T16:24:51.311928617Z
+    description: A Helm chart for Kubernetes
+    digest: 4e03d2b4c5f0311b43988a998c29693e6b0c039c937aa1b96f65560f0925b494
+    name: nginx-ingress
+    urls:
+    - nginx-ingress-0.1.0.tgz
+    version: 0.1.0
+generated: 2016-12-20T16:24:51.310624783Z
