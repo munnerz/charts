@@ -75,11 +75,11 @@ gitlab:
 
   service:
     type: LoadBalancer
-    ip: ""
+    # ip: "1.2.3.4"
 
   secrets:
     rootPassword: "5iveL!fe"
-    sessionKeyBase: ""
-    dbKeyBase: ""
-    secretKeyBase: ""
-    otpKeyBase: ""
+    sessionKeyBase: "changeme"
+    dbKeyBase: "changeme"
+    secretKeyBase: "changeme"
+    otpKeyBase: "changeme"

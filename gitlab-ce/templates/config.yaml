@@ -41,16 +41,16 @@ data:
   gitlab.host: {{ .Values.gitlab.host }}
   gitlab.email: {{ .Values.gitlab.email }}
   gitlab.timezone: {{ .Values.gitlab.timezone }}
-  gitlab.backup.schedule: {{ .Values.gitlab.backup.schedule }}
+  gitlab.backup.schedule: "{{ .Values.gitlab.backup.schedule }}"
   gitlab.backup.expiry: "{{ .Values.gitlab.backup.expiry }}"
   gitlab.backup.aws.backups: "{{ .Values.gitlab.backup.aws.backups }}"
-  gitlab.backup.aws.region: {{ .Values.gitlab.backup.aws.region }}
-  gitlab.backup.aws.bucket: {{ .Values.gitlab.backup.aws.bucket }}
+  gitlab.backup.aws.region: "{{ .Values.gitlab.backup.aws.region }}"
+  gitlab.backup.aws.bucket: "{{ .Values.gitlab.backup.aws.bucket }}"
   gitlab.backup.aws.access-key-id: "{{ .Values.gitlab.backup.aws.accessKeyId }}"
   gitlab.backup.aws.secret-access-key: "{{ .Values.gitlab.backup.aws.secretAccessKey }}"
 
   # Secrets
-  gitlab.secrets.rootPassword: {{ .Values.gitlab.secrets.rootPassword }}
+  gitlab.secrets.rootPassword: "{{ .Values.gitlab.secrets.rootPassword }}"
   gitlab.secrets.sessionKeyBase: "{{ .Values.gitlab.secrets.sessionKeyBase }}"
   gitlab.secrets.dbKeyBase: "{{ .Values.gitlab.secrets.dbKeyBase }}"
   gitlab.secrets.secretKeyBase: "{{ .Values.gitlab.secrets.secretKeyBase }}"
