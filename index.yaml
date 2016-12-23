@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   default-backend:
   - apiVersion: v1
-    created: 2016-12-23T12:45:55.677668816Z
+    created: 2016-12-23T12:50:46.090484363Z
     description: A Helm chart for Kubernetes
     digest: 22e3bbf21c82b6df6ce76dc0e334b52c924ac68a7e84d738d32b327d0cc56d44
     name: default-backend
@@ -11,7 +11,7 @@ entries:
     version: 0.1.0
   kube-lego:
   - apiVersion: v1
-    created: 2016-12-23T12:45:55.677959535Z
+    created: 2016-12-23T12:50:46.09072019Z
     description: A Helm chart for Kubernetes
     digest: 728ce6e28ba5853841a0aca17c2386beb7aec07d65123f9675593393d28977c5
     name: kube-lego
@@ -20,11 +20,32 @@ entries:
     version: 0.1.0
   nginx-ingress:
   - apiVersion: v1
-    created: 2016-12-23T12:45:55.678370641Z
+    created: 2016-12-23T12:50:46.091147886Z
     description: A Helm chart for Kubernetes
     digest: 4e03d2b4c5f0311b43988a998c29693e6b0c039c937aa1b96f65560f0925b494
     name: nginx-ingress
     urls:
     - https://helm.k8s.co/nginx-ingress-0.1.0.tgz
     version: 0.1.0
-generated: 2016-12-23T12:45:55.677159401Z
+  postgresql:
+  - created: 2016-12-23T12:50:46.091614019Z
+    description: Chart for PostgreSQL
+    digest: c7441159f4600d83ff9a6ee673e989d0ac1fd34951a9cf1e1f08f50f50b83ff6
+    engine: gotpl
+    home: https://www.postgresql.org/
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - name: swordbeta
+    - name: databus23
+    name: postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    urls:
+    - https://helm.k8s.co/postgresql-0.3.1.tgz
+    version: 0.3.1
+generated: 2016-12-23T12:50:46.090022725Z
