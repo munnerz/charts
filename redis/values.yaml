@@ -18,8 +18,11 @@ image: bitnami/redis:3.2.5-r0
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
+## Persist data to a persitent volume
 persistence:
-  pdName: some-pd
+# Put something here
+# eg.
+# emptyDir: {}
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/

@@ -47,5 +47,4 @@ spec:
           mountPath: /bitnami/redis
       volumes:
       - name: redis-data
-        gcePersistentDisk:
-          pdName: {{ .Values.persistence.pdName }}
+{{ toYaml .Values.persistence | indent 8 }}

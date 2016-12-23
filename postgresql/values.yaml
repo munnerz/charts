@@ -23,7 +23,9 @@ imageTag: "9.5.4"
 
 ## Persist data to a persitent volume
 persistence:
-  pdName: some-disk
+# Put something here
+# eg.
+# emptyDir: {}
 
 metrics:
   enabled: false

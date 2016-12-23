@@ -82,6 +82,4 @@ spec:
 {{- end }}
       volumes:
       - name: data
-        gcePersistentDisk:
-          pdName: {{ .Values.persistence.pdName }}
-
+{{ toYaml .Values.persistence | indent 8 }}
