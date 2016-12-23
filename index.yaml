@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   default-backend:
   - apiVersion: v1
-    created: 2016-12-22T19:12:08.036213857Z
+    created: 2016-12-23T11:04:37.826215555Z
     description: A Helm chart for Kubernetes
     digest: 22e3bbf21c82b6df6ce76dc0e334b52c924ac68a7e84d738d32b327d0cc56d44
     name: default-backend
@@ -19,7 +19,7 @@ entries:
     - https://helm.k8s.co/gitlab-ce-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: 2016-12-22T19:12:08.036703861Z
+    created: 2016-12-23T11:04:37.826702103Z
     description: A Helm chart for Kubernetes
     digest: c3338afa225b6c862cd57ec3200e9f90e2e19f54d888d720a723ec68df75a20f
     name: gitlab-ce
@@ -28,7 +28,7 @@ entries:
     version: 0.0.1
   kube-lego:
   - apiVersion: v1
-    created: 2016-12-22T19:12:08.038526288Z
+    created: 2016-12-23T11:04:37.827710626Z
     description: A Helm chart for Kubernetes
     digest: 728ce6e28ba5853841a0aca17c2386beb7aec07d65123f9675593393d28977c5
     name: kube-lego
@@ -37,11 +37,51 @@ entries:
     version: 0.1.0
   nginx-ingress:
   - apiVersion: v1
-    created: 2016-12-22T19:12:08.038823628Z
+    created: 2016-12-23T11:04:37.829172554Z
     description: A Helm chart for Kubernetes
     digest: 4e03d2b4c5f0311b43988a998c29693e6b0c039c937aa1b96f65560f0925b494
     name: nginx-ingress
     urls:
     - https://helm.k8s.co/nginx-ingress-0.1.0.tgz
     version: 0.1.0
-generated: 2016-12-22T19:12:08.035871932Z
+  postgresql:
+  - created: 2016-12-23T11:04:37.829493713Z
+    description: Chart for PostgreSQL
+    digest: 247292f2e4401e41af72f40a9fa54a314b1ba1ad8c2e0ad690542f8dfa45ec8c
+    engine: gotpl
+    home: https://www.postgresql.org/
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - name: swordbeta
+    - name: databus23
+    name: postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    urls:
+    - https://helm.k8s.co/postgresql-0.3.0.tgz
+    version: 0.3.0
+  redis:
+  - created: 2016-12-23T11:04:37.829769173Z
+    description: Chart for Redis
+    digest: 0fe4ec3ca4125943265ee32d6701aab8a880895ba119e51dd3e1910a4056d937
+    engine: gotpl
+    home: http://redis.io/
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - https://helm.k8s.co/redis-0.4.2.tgz
+    version: 0.4.2
+generated: 2016-12-23T11:04:37.825856488Z
