@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   default-backend:
   - apiVersion: v1
-    created: 2016-12-23T12:19:54.28957857Z
+    created: 2016-12-23T12:24:44.337134785Z
     description: A Helm chart for Kubernetes
     digest: 22e3bbf21c82b6df6ce76dc0e334b52c924ac68a7e84d738d32b327d0cc56d44
     name: default-backend
@@ -10,7 +10,7 @@ entries:
     - https://helm.k8s.co/default-backend-0.1.0.tgz
     version: 0.1.0
   gitlab-ce:
-  - created: 2016-12-23T12:19:54.29243393Z
+  - created: 2016-12-23T12:24:44.338870127Z
     description: GitLab Community Edition
     digest: 5a7c4ce9711a730025e505650c0524b4a5aac1c7e8de4596c0eef6a8f5b34253
     keywords:
@@ -31,7 +31,7 @@ entries:
     - https://helm.k8s.co/gitlab-ce-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: 2016-12-23T12:19:54.291704427Z
+    created: 2016-12-23T12:24:44.338179619Z
     description: A Helm chart for Kubernetes
     digest: 1426dd302f6a755bf2e201f799b868ec95784f0ca8f154af29b5f4b70b4fad3c
     name: gitlab-ce
@@ -39,7 +39,7 @@ entries:
     - https://helm.k8s.co/gitlab-ce-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: 2016-12-23T12:19:54.290048687Z
+    created: 2016-12-23T12:24:44.337680712Z
     description: A Helm chart for Kubernetes
     digest: c3338afa225b6c862cd57ec3200e9f90e2e19f54d888d720a723ec68df75a20f
     name: gitlab-ce
@@ -48,7 +48,7 @@ entries:
     version: 0.0.1
   kube-lego:
   - apiVersion: v1
-    created: 2016-12-23T12:19:54.292586683Z
+    created: 2016-12-23T12:24:44.340172031Z
     description: A Helm chart for Kubernetes
     digest: 728ce6e28ba5853841a0aca17c2386beb7aec07d65123f9675593393d28977c5
     name: kube-lego
@@ -57,7 +57,7 @@ entries:
     version: 0.1.0
   nginx-ingress:
   - apiVersion: v1
-    created: 2016-12-23T12:19:54.292903177Z
+    created: 2016-12-23T12:24:44.34047908Z
     description: A Helm chart for Kubernetes
     digest: 4e03d2b4c5f0311b43988a998c29693e6b0c039c937aa1b96f65560f0925b494
     name: nginx-ingress
@@ -65,7 +65,7 @@ entries:
     - https://helm.k8s.co/nginx-ingress-0.1.0.tgz
     version: 0.1.0
   postgresql:
-  - created: 2016-12-23T12:19:54.294769787Z
+  - created: 2016-12-23T12:24:44.341928474Z
     description: Chart for PostgreSQL
     digest: dfa17f5bc3d22a179f45fab70065da81baf4ca5ffe2b38fea24a03f3f9837be5
     engine: gotpl
@@ -85,7 +85,7 @@ entries:
     urls:
     - https://helm.k8s.co/postgresql-0.3.4.tgz
     version: 0.3.4
-  - created: 2016-12-23T12:19:54.294477332Z
+  - created: 2016-12-23T12:24:44.341652461Z
     description: Chart for PostgreSQL
     digest: 471e76aebc7342aba845b540a1b227fe808a7f6f3fa74ec0568ba622919b430f
     engine: gotpl
@@ -105,7 +105,7 @@ entries:
     urls:
     - https://helm.k8s.co/postgresql-0.3.3.tgz
     version: 0.3.3
-  - created: 2016-12-23T12:19:54.294188011Z
+  - created: 2016-12-23T12:24:44.341373985Z
     description: Chart for PostgreSQL
     digest: 06544dbb497734c36748c5006c8d0df04bc01930b896183304029a393ea0dd10
     engine: gotpl
@@ -125,7 +125,7 @@ entries:
     urls:
     - https://helm.k8s.co/postgresql-0.3.2.tgz
     version: 0.3.2
-  - created: 2016-12-23T12:19:54.293885424Z
+  - created: 2016-12-23T12:24:44.341074741Z
     description: Chart for PostgreSQL
     digest: 0c10354674067ce647e2901d6644930b5b20b54ec2be9a0fff0971b47364367a
     engine: gotpl
@@ -145,7 +145,7 @@ entries:
     urls:
     - https://helm.k8s.co/postgresql-0.3.1.tgz
     version: 0.3.1
-  - created: 2016-12-23T12:19:54.293464406Z
+  - created: 2016-12-23T12:24:44.340783017Z
     description: Chart for PostgreSQL
     digest: 247292f2e4401e41af72f40a9fa54a314b1ba1ad8c2e0ad690542f8dfa45ec8c
     engine: gotpl
@@ -166,7 +166,25 @@ entries:
     - https://helm.k8s.co/postgresql-0.3.0.tgz
     version: 0.3.0
   redis:
-  - created: 2016-12-23T12:19:54.295957752Z
+  - created: 2016-12-23T12:24:44.343305945Z
+    description: Chart for Redis
+    digest: 0b3087655ee6777c608ed43d4abc6b015e18850cbee7b5f65740bca15506b020
+    engine: gotpl
+    home: http://redis.io/
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    urls:
+    - https://helm.k8s.co/redis-0.4.6.tgz
+    version: 0.4.6
+  - created: 2016-12-23T12:24:44.343036732Z
     description: Chart for Redis
     digest: 77ef4a0041e48d9f02a57b47aab6c1e6ebceb1c9f32f9379fd2c154d6f8b9a95
     engine: gotpl
@@ -184,7 +202,7 @@ entries:
     urls:
     - https://helm.k8s.co/redis-0.4.5.tgz
     version: 0.4.5
-  - created: 2016-12-23T12:19:54.295651349Z
+  - created: 2016-12-23T12:24:44.342736969Z
     description: Chart for Redis
     digest: 5330ea0c7ad192b5a6726f66f4ac6da696b9bb951f4a40f778a4932d7f4380c9
     engine: gotpl
@@ -202,7 +220,7 @@ entries:
     urls:
     - https://helm.k8s.co/redis-0.4.4.tgz
     version: 0.4.4
-  - created: 2016-12-23T12:19:54.295348878Z
+  - created: 2016-12-23T12:24:44.342463213Z
     description: Chart for Redis
     digest: a32ebba404a130b7d7c32c0a522d1ac405005438ddb360c44f65f0cb47d52020
     engine: gotpl
@@ -220,7 +238,7 @@ entries:
     urls:
     - https://helm.k8s.co/redis-0.4.3.tgz
     version: 0.4.3
-  - created: 2016-12-23T12:19:54.29502483Z
+  - created: 2016-12-23T12:24:44.342181536Z
     description: Chart for Redis
     digest: 0fe4ec3ca4125943265ee32d6701aab8a880895ba119e51dd3e1910a4056d937
     engine: gotpl
@@ -238,4 +256,4 @@ entries:
     urls:
     - https://helm.k8s.co/redis-0.4.2.tgz
     version: 0.4.2
-generated: 2016-12-23T12:19:54.289193224Z
+generated: 2016-12-23T12:24:44.336775732Z
