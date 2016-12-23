@@ -24,6 +24,8 @@ persistence:
 # eg.
 # emptyDir: {}
 
+zone: europe-west1-b
+
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##

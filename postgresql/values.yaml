@@ -21,6 +21,10 @@ imageTag: "9.5.4"
 ## Default: the postgres user
 # postgresDatabase:
 
+# Set a zone here. Needed to ensure we land in the same AZ
+# as the associated pd
+zone: europe-west1-b
+
 ## Persist data to a persitent volume
 persistence:
 # Put something here

@@ -28,6 +28,8 @@ spec:
             }
         ]'
     spec:
+      nodeSelector:
+        failure-domain.beta.kubernetes.io/zone: {{ .Values.zone }}
       containers:
       - name: {{ template "fullname" . }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"

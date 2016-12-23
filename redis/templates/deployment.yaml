@@ -13,6 +13,8 @@ spec:
       labels:
         app: {{ template "fullname" . }}
     spec:
+      nodeSelector:
+        failure-domain.beta.kubernetes.io/zone: {{ .Values.zone }}
       containers:
       - name: {{ template "fullname" . }}
         image: "{{ .Values.image }}"
