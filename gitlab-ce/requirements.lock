@@ -1,6 +1,9 @@
 dependencies:
 - name: redis
-  repository: https://kubernetes-charts.storage.googleapis.com/
+  repository: https://helm.k8s.co
   version: 0.4.2
-digest: sha256:03b5a302e41ad393ea7e66dcc8d9eb615bed4f755cc9d2c00947ccc375536daa
-generated: 2016-12-20T01:16:41.748029475Z
+- name: postgresql
+  repository: https://helm.k8s.co
+  version: 0.3.1
+digest: sha256:6d19b7aae122380cdf5aaed9d21596cb063770b3211de64347bab6ec285a2c45
+generated: 2016-12-23T11:38:13.168724637Z

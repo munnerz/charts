@@ -14,192 +14,92 @@ spec:
       labels:
         app: {{ template "fullname" . }}
     spec:
-      nodeSelector:
-        failure-domain.beta.kubernetes.io/zone: {{ .Values.gitlab.data.zone }}
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.gitlab.image }}"
-        ports:
-        - containerPort: 22
-        - containerPort: 80
-        resources:
-{{ toYaml .Values.gitlab.resources | indent 10 }}
-        volumeMounts:
-        - mountPath: /home/git/data
-          name: gitlab-data
+      - name: {{ template "fullname" . }}
+        image: {{ .Values.image }}
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
         env:
+        ## General GitLab Configs
+        ##
+        # This is a free-form env var that GitLab Omnibus uses to configure
+        # everything. We're passing this in from a configmap and pulling some
+        # of the values from the env vars defined below. This is done to
+        # avoid leaving secrets visible in kubectl.
+        - name: GITLAB_OMNIBUS_CONFIG
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "fullname" . }}
+              key: gitlab_omnibus_config
+        - name: GITLAB_ROOT_PASSWORD
+        {{- if default "" .Values.gitlabRootPassword }}
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "fullname" . }}
+              key: gitlab-root-password
+        {{ end }}
+        - name: EXTERNAL_URL
+          value: {{ default "" .Values.externalUrl | quote }}
+        ## DB configuration
+        ##
         - name: DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: db.host
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: db.name
+          value: {{ template "postgresql.fullname" . }}
         - name: DB_USER
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: {{ template "fullname" . }}
-              key: db.user
-        - name: DB_PASS
+              key: db-user
+        - name: DB_PASSWORD
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: {{ template "fullname" . }}
-              key: db.pass
-        - name: DB_ADAPTER
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: db.type
-        - name: GITLAB_SSH_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.ssh.host
-        - name: GITLAB_SSH_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.ssh.port
-        - name: GITLAB_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.port
-        - name: GITLAB_HTTPS
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.ssl
-        - name: GITLAB_HTTPS_HSTS_ENABLED
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.ssl.hsts.enabled
-        - name: GITLAB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.host
-        - name: GITLAB_EMAIL
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.email
-        - name: GITLAB_TIMEZONE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.timezone
-        - name: GITLAB_SECRETS_SESSION_KEY_BASE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.secrets.sessionKeyBase
-        - name: GITLAB_SECRETS_DB_KEY_BASE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.secrets.dbKeyBase
-        - name: GITLAB_SECRETS_OTP_KEY_BASE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.secrets.otpKeyBase
-        - name: GITLAB_SECRETS_SECRET_KEY_BASE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.secrets.secretKeyBase
-        - name: GITLAB_ROOT_PASSWORD
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.secrets.rootPassword
-        - name: SMTP_ENABLED
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: smtp.enabled
-        - name: SMTP_DOMAIN
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: smtp.domain
-        - name: SMTP_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: smtp.host
-        - name: SMTP_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: smtp.port
-        - name: SMTP_USER
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: smtp.user
-        - name: SMTP_PASS
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: smtp.pass
+              key: db-password
+        - name: DB_DATABASE
+          value: {{ .Values.postgresql.postgresDatabase | quote }}
+        ## Redis configuration
+        ##
         - name: REDIS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: redis.host
-        - name: REDIS_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: redis.port
+          value: {{ template "redis.fullname" . }}
         - name: REDIS_PASSWORD
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: {{ template "fullname" . }}
-              key: redis.password
-        - name: GITLAB_BACKUP_SCHEDULE
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.schedule
-        - name: GITLAB_BACKUP_EXPIRY
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.expiry
-        - name: AWS_BACKUPS
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.aws.backups
-        - name: AWS_BACKUP_REGION
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.aws.region
-        - name: AWS_BACKUP_BUCKET
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.aws.bucket
-        - name: AWS_BACKUP_ACCESS_KEY_ID
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.aws.access-key-id
-        - name: AWS_BACKUP_SECRET_ACCESS_KEY
-          valueFrom:
-            configMapKeyRef:
-              name: {{ template "fullname" . }}
-              key: gitlab.backup.aws.secret-access-key
+              key: redis-password
+        ports:
+        - name: ssh
+          containerPort: 22
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+        livenessProbe:
+          httpGet:
+            path: /help
+            port: http
+          # This pod takes a very long time to start up. Be cautious when
+          # lowering this value to avoid Pod death during startup.
+          initialDelaySeconds: 200
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 10
+        readinessProbe:
+          httpGet:
+            path: /help
+            port: http
+          initialDelaySeconds: 30
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        volumeMounts:
+        - name: gitlab-etc
+          mountPath: /etc/gitlab
+        - name: gitlab-data
+          mountPath: /gitlab-data
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
       volumes:
+      - name: gitlab-etc
+{{ toYaml .Values.persistence.gitlabEtc | indent 8 }}
       - name: gitlab-data
-        gcePersistentDisk:
-          fsType: "ext4" 
-          pdName: "{{ .Values.gitlab.data.name }}" 
+{{ toYaml .Values.persistence.gitlabData | indent 8 }}
