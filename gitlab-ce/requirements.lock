@@ -4,6 +4,6 @@ dependencies:
   version: 0.4.2
 - name: postgresql
   repository: https://helm.k8s.co
-  version: 0.3.1
-digest: sha256:6d19b7aae122380cdf5aaed9d21596cb063770b3211de64347bab6ec285a2c45
-generated: 2016-12-23T11:38:13.168724637Z
+  version: 0.3.2
+digest: sha256:42cd992429f267bcaed89ee8cdac8079ed99d16e5ecc9fbf8a09d7e07fd5ad1f
+generated: 2016-12-23T13:20:22.248013068Z

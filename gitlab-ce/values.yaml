@@ -12,12 +12,12 @@ image: gitlab/gitlab-ce:8.14.4-ce.0
 ## The URL (with protocol) that your users will use to reach the install.
 ## ref: https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 ##
-#externalUrl: http://your-domain.com/
+# externalUrl: http://example.com/
 
 ## Change the initial default admin password if set. If not set, you'll be
 ## able to set it when you first visit your install.
 ##
-#gitlabRootPassword: ""
+# gitlabRootPassword: ""
 
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ## ref: http://kubernetes.io/docs/user-guide/services/#publishing-services---service-types
@@ -37,6 +37,8 @@ resources:
   limits:
     memory: 2Gi
     cpu: 1
+
+zone: europe-west1-b
 
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
@@ -64,6 +66,7 @@ postgresql:
   imageTag: "9.4"
   cpu: 1000m
   memory: 1Gi
+  zone: europe-west1-b
 
   postgresUser: gitlab
   postgresPassword: gitlab
@@ -78,6 +81,7 @@ postgresql:
 ##
 redis:
   redisPassword: "some_long_redis_password"
+  zone: europe-west1-b
 
   resources:
     requests:
