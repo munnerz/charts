@@ -23,6 +23,7 @@ imageTag: "9.5.4"
 
 ## Persist data to a persitent volume
 persistence:
+  pdName: some-disk
 
 metrics:
   enabled: false
