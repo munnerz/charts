@@ -12,7 +12,9 @@ image: gitlab/gitlab-ce:8.14.4-ce.0
 ## The URL (with protocol) that your users will use to reach the install.
 ## ref: https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 ##
-# externalUrl: http://example.com/
+# externalUrl:
+#   scheme: http
+#   hostname: example.com
 
 ## Change the initial default admin password if set. If not set, you'll be
 ## able to set it when you first visit your install.

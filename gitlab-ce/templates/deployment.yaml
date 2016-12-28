@@ -40,7 +40,7 @@ spec:
               key: gitlab-root-password
         {{ end }}
         - name: EXTERNAL_URL
-          value: {{ default "" .Values.externalUrl | quote }}
+          value: "{{ .Values.externalUrl.scheme }}://{{ .Values.externalUrl.hostname }}"
         ## DB configuration
         ##
         - name: DB_HOST

@@ -15,7 +15,7 @@ metadata:
     heritage: "{{ .Release.Service }}"
 spec:
   rules:
-  - host: "{{ .Values.externalUrl }}"
+  - host: "{{ .Values.externalUrl.hostname }}"
     http:
       paths:
       - backend:
@@ -25,7 +25,7 @@ spec:
 {{- if .Values.ingress.tls }}
   tls:
   - hosts:
-    - "{{ .Values.externalUrl }}"
+    - "{{ .Values.externalUrl.hostname }}"
     secretName: {{ template "fullname" . }}-tls
 {{- end }}
 {{- end }}
