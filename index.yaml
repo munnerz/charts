@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   default-backend:
   - apiVersion: v1
-    created: 2016-12-28T17:59:26.571043694Z
+    created: 2016-12-28T18:31:37.570039847Z
     description: A Helm chart for Kubernetes
     digest: 22e3bbf21c82b6df6ce76dc0e334b52c924ac68a7e84d738d32b327d0cc56d44
     name: default-backend
@@ -10,7 +10,27 @@ entries:
     - https://helm.k8s.co/default-backend-0.1.0.tgz
     version: 0.1.0
   gitlab-ce:
-  - created: 2016-12-28T17:59:26.572081642Z
+  - created: 2016-12-28T18:31:37.571563631Z
+    description: GitLab Community Edition
+    digest: c643889a3392450a927d5d0253f9d23c9023068aefc30dcdc40160a31a33d141
+    keywords:
+    - git
+    - ci
+    - deploy
+    - issue tracker
+    - code review
+    - wiki
+    maintainers:
+    - email: gtaylor@gc-taylor.com
+      name: Greg Taylor
+    name: gitlab-ce
+    sources:
+    - https://hub.docker.com/r/gitlab/gitlab-ce/
+    - https://docs.gitlab.com/omnibus/
+    urls:
+    - https://helm.k8s.co/gitlab-ce-0.1.3.tgz
+    version: 0.1.3
+  - created: 2016-12-28T18:31:37.5710318Z
     description: GitLab Community Edition
     digest: 66cd3e3f58ab6d26a6c5c335e6aa6149fb89f82c2478f0571cba72611c5a676c
     keywords:
@@ -32,7 +52,7 @@ entries:
     version: 0.1.2
   kube-lego:
   - apiVersion: v1
-    created: 2016-12-28T17:59:26.572253323Z
+    created: 2016-12-28T18:31:37.571738857Z
     description: A Helm chart for Kubernetes
     digest: 728ce6e28ba5853841a0aca17c2386beb7aec07d65123f9675593393d28977c5
     name: kube-lego
@@ -41,7 +61,7 @@ entries:
     version: 0.1.0
   nginx-ingress:
   - apiVersion: v1
-    created: 2016-12-28T17:59:26.572740777Z
+    created: 2016-12-28T18:31:37.573339008Z
     description: A Helm chart for Kubernetes
     digest: 0a4c70f48668fdca0e02958af8fa569b8c2a8938748ce9ade958355633377275
     name: nginx-ingress
@@ -49,7 +69,7 @@ entries:
     - https://helm.k8s.co/nginx-ingress-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: 2016-12-28T17:59:26.572523893Z
+    created: 2016-12-28T18:31:37.573128266Z
     description: A Helm chart for Kubernetes
     digest: 4e03d2b4c5f0311b43988a998c29693e6b0c039c937aa1b96f65560f0925b494
     name: nginx-ingress
@@ -57,7 +77,7 @@ entries:
     - https://helm.k8s.co/nginx-ingress-0.1.0.tgz
     version: 0.1.0
   postgresql:
-  - created: 2016-12-28T17:59:26.574450159Z
+  - created: 2016-12-28T18:31:37.573926067Z
     description: Chart for PostgreSQL
     digest: 2204ce0badf12e6f6c78c642d6efad4bb3c44095c00378785b6a24fb1e9c3f27
     engine: gotpl
@@ -77,7 +97,7 @@ entries:
     urls:
     - https://helm.k8s.co/postgresql-0.3.2.tgz
     version: 0.3.2
-  - created: 2016-12-28T17:59:26.573054207Z
+  - created: 2016-12-28T18:31:37.57362697Z
     description: Chart for PostgreSQL
     digest: c7441159f4600d83ff9a6ee673e989d0ac1fd34951a9cf1e1f08f50f50b83ff6
     engine: gotpl
@@ -98,7 +118,7 @@ entries:
     - https://helm.k8s.co/postgresql-0.3.1.tgz
     version: 0.3.1
   redis:
-  - created: 2016-12-28T17:59:26.57498816Z
+  - created: 2016-12-28T18:31:37.574452052Z
     description: Chart for Redis
     digest: acd5767d9c58be4d125ca14bb0bbdecfe98a7382a2772231f22896284d5c10b9
     engine: gotpl
@@ -116,7 +136,7 @@ entries:
     urls:
     - https://helm.k8s.co/redis-0.4.2.tgz
     version: 0.4.2
-  - created: 2016-12-28T17:59:26.574735632Z
+  - created: 2016-12-28T18:31:37.574197375Z
     description: Chart for Redis
     digest: 8f3b582f7fd0cd2e5fdd4a1e9b4d96a6a226c590ea9e64cc9a3bb2fb8acfe850
     engine: gotpl
@@ -134,4 +154,4 @@ entries:
     urls:
     - https://helm.k8s.co/redis-0.4.1.tgz
     version: 0.4.1
-generated: 2016-12-28T17:59:26.570636518Z
+generated: 2016-12-28T18:31:37.569690567Z
