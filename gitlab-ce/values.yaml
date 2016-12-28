@@ -24,6 +24,11 @@ image: gitlab/gitlab-ce:8.14.4-ce.0
 ##
 serviceType: LoadBalancer
 
+ingress:
+  enabled: false
+  tls: false
+  class: nginx
+
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##
