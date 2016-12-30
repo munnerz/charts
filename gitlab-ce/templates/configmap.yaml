@@ -31,3 +31,9 @@ data:
     gitlab_rails['shared_path'] = '/gitlab-data/shared';
     gitlab_rails['uploads_directory'] = '/gitlab-data/uploads';
     gitlab_ci['builds_directory'] = '/gitlab-data/builds';
+    nginx['listen_port'] = 80
+    nginx['listen_https'] = false
+    nginx['proxy_set_headers'] = {
+      "X-Forwarded-Proto" => "https",
+      "X-Forwarded-Ssl" => "on"
+    }
