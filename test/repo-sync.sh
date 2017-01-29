@@ -18,7 +18,7 @@
 
 # Setup Helm
 HELM_URL=https://storage.googleapis.com/kubernetes-helm
-HELM_TARBALL=helm-canary-linux-amd64.tar.gz
+HELM_TARBALL=helm-v2.1.3-linux-amd64.tar.gz
 HELM_REPO_BUCKET=k8s-co-helm
 STABLE_REPO_URL=https://storage.googleapis.com/"$HELM_REPO_BUCKET"/
 
