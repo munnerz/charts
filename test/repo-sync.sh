@@ -31,7 +31,7 @@ helm init --client-only
 
 gcloud auth activate-service-account --key-file svc-acct.json
 
-helm repo add stable "$STABLE_REPO_URL"
+helm repo add k8s-stable "$STABLE_REPO_URL"
 
 # Create the stable repository
 STABLE_REPO_DIR=stable-repo
