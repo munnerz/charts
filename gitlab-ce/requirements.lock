@@ -1,9 +1,0 @@
-dependencies:
-- name: redis
-  repository: https://helm.k8s.co
-  version: 0.4.2
-- name: postgresql
-  repository: https://helm.k8s.co
-  version: 0.3.2
-digest: sha256:42cd992429f267bcaed89ee8cdac8079ed99d16e5ecc9fbf8a09d7e07fd5ad1f
-generated: 2016-12-23T13:20:22.248013068Z

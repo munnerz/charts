@@ -1,4 +1,0 @@
-dependencies:
-- name: default-backend
-  version: 0.1.0
-  repository: https://helm.k8s.co/

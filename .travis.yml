@@ -1,0 +1,10 @@
+before_install:
+    - openssl aes-256-cbc -K $encrypted_b971ef906ded_key -iv $encrypted_b971ef906ded_iv -in svc-acct.json.enc -out svc-acct.json -d
+
+install:
+    - curl -o google-cloud-sdk-141.0.0-linux-x86_64.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-141.0.0-linux-x86_64.tar.gz
+    - tar xvf google-cloud-sdk-141.0.0-linux-x86_64.tar.gz
+    - export PATH="$(pwd)/google-cloud-sdk/bin:$PATH"
+
+script:
+    - ./test/repo-sync.sh
