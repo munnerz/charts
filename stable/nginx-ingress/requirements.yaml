@@ -1,0 +1,4 @@
+dependencies:
+- name: default-backend
+  version: 0.1.0
+  repository: https://storage.googleapis.com/k8s-co-helm
